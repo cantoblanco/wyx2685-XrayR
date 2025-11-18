@@ -8,7 +8,7 @@ RUN go mod download \
 
 # Release
 FROM alpine:latest
-# 安装必要的工具包
+# 瀹夎蹇呰鐨勫伐鍏峰寘
 RUN apk --update --no-cache add curl tzdata ca-certificates \
     && cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime \
     && mkdir /etc/XrayR/ \

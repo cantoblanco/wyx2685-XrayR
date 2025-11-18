@@ -448,31 +448,31 @@ func (c *Controller) addNewUser(userInfo *[]api.UserInfo, nodeInfo *api.NodeInfo
 }
 
 func compareUserList(old, new *[]api.UserInfo) (deleted, added []api.UserInfo) {
-	mSrc := make(map[api.UserInfo]byte) // 按源数组建索引
-	mAll := make(map[api.UserInfo]byte) // 源+目所有元素建索引
+	mSrc := make(map[api.UserInfo]byte) // 鎸夋簮鏁扮粍寤虹储寮?
+	mAll := make(map[api.UserInfo]byte) // 婧?鐩墍鏈夊厓绱犲缓绱㈠紩
 
-	var set []api.UserInfo // 交集
+	var set []api.UserInfo // 浜ら泦
 
-	// 1.源数组建立map
+	// 1.婧愭暟缁勫缓绔媘ap
 	for _, v := range *old {
 		mSrc[v] = 0
 		mAll[v] = 0
 	}
-	// 2.目数组中，存不进去，即重复元素，所有存不进去的集合就是并集
+	// 2.鐩暟缁勪腑锛屽瓨涓嶈繘鍘伙紝鍗抽噸澶嶅厓绱狅紝鎵€鏈夊瓨涓嶈繘鍘荤殑闆嗗悎灏辨槸骞堕泦
 	for _, v := range *new {
 		l := len(mAll)
 		mAll[v] = 1
-		if l != len(mAll) { // 长度变化，即可以存
+		if l != len(mAll) { // 闀垮害鍙樺寲锛屽嵆鍙互瀛?
 			l = len(mAll)
-		} else { // 存不了，进并集
+		} else { // 瀛樹笉浜嗭紝杩涘苟闆?
 			set = append(set, v)
 		}
 	}
-	// 3.遍历交集，在并集中找，找到就从并集中删，删完后就是补集（即并-交=所有变化的元素）
+	// 3.閬嶅巻浜ら泦锛屽湪骞堕泦涓壘锛屾壘鍒板氨浠庡苟闆嗕腑鍒狅紝鍒犲畬鍚庡氨鏄ˉ闆嗭紙鍗冲苟-浜?鎵€鏈夊彉鍖栫殑鍏冪礌锛?
 	for _, v := range set {
 		delete(mAll, v)
 	}
-	// 4.此时，mall是补集，所有元素去源中找，找到就是删除的，找不到的必定能在目数组中找到，即新加的
+	// 4.姝ゆ椂锛宮all鏄ˉ闆嗭紝鎵€鏈夊厓绱犲幓婧愪腑鎵撅紝鎵惧埌灏辨槸鍒犻櫎鐨勶紝鎵句笉鍒扮殑蹇呭畾鑳藉湪鐩暟缁勪腑鎵惧埌锛屽嵆鏂板姞鐨?
 	for v := range mAll {
 		_, exist := mSrc[v]
 		if exist {

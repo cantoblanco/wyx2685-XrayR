@@ -296,7 +296,7 @@ func (c *APIClient) ReportNodeOnlineUsers(onlineUserList *[]api.OnlineUser) erro
 	data := make([]OnlineUser, len(*onlineUserList))
 	for i, user := range *onlineUserList {
 		data[i] = OnlineUser{UID: user.UID, IP: user.IP}
-		reportOnline[user.UID]++ // will start from 1 if key doesn’t exist
+		reportOnline[user.UID]++ // will start from 1 if key doesn鈥檛 exist
 	}
 	c.LastReportOnline = reportOnline // Update LastReportOnline
 
@@ -611,7 +611,7 @@ func (c *APIClient) ParseSSPluginNodeResponse(nodeInfoResponse *NodeInfoResponse
 
 // ParseTrojanNodeResponse parse the response for the given node info format
 func (c *APIClient) ParseTrojanNodeResponse(nodeInfoResponse *NodeInfoResponse) (*api.NodeInfo, error) {
-	// 域名或IP;port=连接端口#偏移端口|host=xx
+	// 鍩熷悕鎴朓P;port=杩炴帴绔彛#鍋忕Щ绔彛|host=xx
 	// gz.aaa.com;port=443#12345|host=hk.aaa.com
 	var p, host, outsidePort, insidePort, transportProtocol, serviceName string
 	var speedLimit uint64 = 0

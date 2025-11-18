@@ -30,34 +30,34 @@ const (
 // rootPath:
 //
 //	./.lego/accounts/
-//	     │      └── root accounts directory
-//	     └── "path" option
+//	     鈹?     鈹斺攢鈹€ root accounts directory
+//	     鈹斺攢鈹€ "path" option
 //
 // rootUserPath:
 //
 //	./.lego/accounts/localhost_14000/hubert@hubert.com/
-//	     │      │             │             └── userID ("email" option)
-//	     │      │             └── CA server ("server" option)
-//	     │      └── root accounts directory
-//	     └── "path" option
+//	     鈹?     鈹?            鈹?            鈹斺攢鈹€ userID ("email" option)
+//	     鈹?     鈹?            鈹斺攢鈹€ CA server ("server" option)
+//	     鈹?     鈹斺攢鈹€ root accounts directory
+//	     鈹斺攢鈹€ "path" option
 //
 // keysPath:
 //
 //	./.lego/accounts/localhost_14000/hubert@hubert.com/keys/
-//	     │      │             │             │           └── root keys directory
-//	     │      │             │             └── userID ("email" option)
-//	     │      │             └── CA server ("server" option)
-//	     │      └── root accounts directory
-//	     └── "path" option
+//	     鈹?     鈹?            鈹?            鈹?          鈹斺攢鈹€ root keys directory
+//	     鈹?     鈹?            鈹?            鈹斺攢鈹€ userID ("email" option)
+//	     鈹?     鈹?            鈹斺攢鈹€ CA server ("server" option)
+//	     鈹?     鈹斺攢鈹€ root accounts directory
+//	     鈹斺攢鈹€ "path" option
 //
 // accountFilePath:
 //
 //	./.lego/accounts/localhost_14000/hubert@hubert.com/account.json
-//	     │      │             │             │             └── account file
-//	     │      │             │             └── userID ("email" option)
-//	     │      │             └── CA server ("server" option)
-//	     │      └── root accounts directory
-//	     └── "path" option
+//	     鈹?     鈹?            鈹?            鈹?            鈹斺攢鈹€ account file
+//	     鈹?     鈹?            鈹?            鈹斺攢鈹€ userID ("email" option)
+//	     鈹?     鈹?            鈹斺攢鈹€ CA server ("server" option)
+//	     鈹?     鈹斺攢鈹€ root accounts directory
+//	     鈹斺攢鈹€ "path" option
 type AccountsStorage struct {
 	userID          string
 	rootPath        string

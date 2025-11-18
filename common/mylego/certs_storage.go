@@ -24,14 +24,14 @@ const (
 // rootPath:
 //
 //	./.lego/certificates/
-//	     │      └── root certificates directory
-//	     └── "path" option
+//	     鈹?     鈹斺攢鈹€ root certificates directory
+//	     鈹斺攢鈹€ "path" option
 //
 // archivePath:
 //
 //	./.lego/archives/
-//	     │      └── archived certificates directory
-//	     └── "path" option
+//	     鈹?     鈹斺攢鈹€ archived certificates directory
+//	     鈹斺攢鈹€ "path" option
 type CertificatesStorage struct {
 	rootPath string
 	pem      bool

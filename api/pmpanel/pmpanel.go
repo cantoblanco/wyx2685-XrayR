@@ -430,7 +430,7 @@ func (c *APIClient) ParseSSNodeResponse(nodeInfoResponse *NodeInfoResponse) (*ap
 
 // ParseTrojanNodeResponse parse the response for the given nodeinfor format
 func (c *APIClient) ParseTrojanNodeResponse(nodeInfoResponse *NodeInfoResponse) (*api.NodeInfo, error) {
-	// 域名或IP;port=连接端口#偏移端口|host=xx
+	// 鍩熷悕鎴朓P;port=杩炴帴绔彛#鍋忕Щ绔彛|host=xx
 	// gz.aaa.com;port=443#12345|host=hk.aaa.com
 	var host string
 	var transportProtocol = "tcp"
